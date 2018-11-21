@@ -1,0 +1,27 @@
+# génération à partir de l'archétype
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1
+
+mvn install
+
+# consturction du projet
+mvn package
+
+# contruction projet archetype
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.ocr.ticket -DartifactId=ticket -Dversion=1.0-SNAPSHOT
+
+
+## module : ticket-batch
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.ocr.ticket -DartifactId=ticket-batch -Dpackage=com.ocr.ticket.batch
+
+## module : ticket-webapp
+## Remarquez ici l'utilisation de l'archetype "webapp"
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.ocr.ticket -DartifactId=ticket-webapp -Dpackage=com.ocr.ticket.webapp
+
+## module : ticket-business
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.ocr.ticket -DartifactId=ticket-business -Dpackage=com.ocr.ticket.business
+
+## module : ticket-consumer
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.ocr.ticket -DartifactId=ticket-consumer -Dpackage=com.ocr.ticket.consumer
+
+## module : ticket-model
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.ocr.ticket -DartifactId=ticket-model -Dpackage=com.ocr.ticket.model
